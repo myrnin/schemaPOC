@@ -9,9 +9,10 @@ export default {
       type: 'string',
     },
     {
-      name: 'copyright',
-      title: 'Copyright',
-      type: 'string',
+      name: 'socialLinks',
+      title: 'Social Links',
+      type: 'array',
+      of: [{type: 'url'}],
     },
   ],
 }

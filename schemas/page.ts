@@ -3,7 +3,20 @@ export default {
   title: 'Page',
   type: 'document',
   fields: [
-    {name: 'title', title: 'Title', type: 'string'},
+    {
+      name: 'title',
+      title: 'Title',
+      type: 'string',
+    },
+    {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'title',
+        maxLength: 96,
+      },
+    },
     {
       name: 'navigationHeader',
       title: 'Navigation Header',
@@ -13,7 +26,13 @@ export default {
       name: 'content',
       title: 'Content',
       type: 'array',
-      of: [{type: 'richTextBlock'}, {type: 'imageGalleryBlock'}],
+      of: [
+        {type: 'richTextBlock'},
+        {type: 'mediaBlock'},
+        {type: 'quoteBlock'},
+        {type: 'callToActionBlock'},
+        {type: 'mapBlock'},
+      ],
     },
     {
       name: 'footer',
