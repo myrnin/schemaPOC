@@ -1,6 +1,7 @@
 {
   "name": "articlepoc",
   "private": true,
+  "type": "module",
   "version": "1.0.0",
   "main": "package.json",
   "license": "UNLICENSED",
@@ -15,6 +16,7 @@
     "sanity"
   ],
   "dependencies": {
+    "@sanity/client": "^6.18.2",
     "@sanity/vision": "^3.42.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
