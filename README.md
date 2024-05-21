@@ -257,3 +257,128 @@ Now you can do the following things:
 - Summarize the key points discussed
 - Reiterate the benefits and potential of using Sanity for the organization's content management needs
 - Next steps and actions post-presentation
+
+
+
+######################################
+
+## Component Breakdown
+Level       | Component
+-----------------------------------------
+Page        | Market Byte Article Page
+  Props:
+    - title: string
+    - slug: string
+  └── Template
+        └── Article Page Template
+            ├── Organism
+            │     └── Header
+            │         Props:
+            │           - logo: { src: string, alt: string }
+            │           - menuItems: Array<{ title: string, url: string }>
+            │           - searchIcon: { src: string, alt: string }
+            │           - profileIcon: { src: string, alt: string }
+            │         ├── Atom
+            │         │     └── Material UI AppBar
+            │         ├── Molecule
+            │         │     └── Material UI Toolbar
+            │         │         ├── Atom
+            │         │         │     └── Material UI Typography (Logo)
+            │         │         ├── Molecule
+            │         │         │     └── Material UI Button (Menu Items)
+            │         │         │         ├── Atom
+            │         │         │         │     └── Material UI Button (Investment Solutions)
+            │         │         │         │     └── Material UI Button (Research)
+            │         │         │         │     └── Material UI Button (Resources)
+            │         │         │         │     └── Material UI Button (Company)
+            │         │         │         │     └── Material UI Button (Start Investing)
+            │         │         ├── Atom
+            │         │         │     └── Material UI IconButton (Search Icon)
+            │         │         └── Atom
+            │         │               └── Material UI IconButton (Profile Icon)
+            ├── Organism
+            │     └── Main Content Area
+            │         Props:
+            │           - articleTitle: string
+            │           - articleMetadata: { date: string, author: string }
+            │           - articleBody: Array<{ type: string, content: string | { src: string, alt: string } | { url: string, title: string } }>
+            │           - articleImage: { src: string, alt: string }
+            │           - chart: { title: string, data: string, source: string }
+            │           - subscribeBox: { text: string, buttonText: string, onSubscribe: () => void }
+            │           - relatedArticles: Array<{ title: string, link: string }>
+            │         └── Molecule
+            │               └── Material UI Grid (Article Content)
+            │                   ├── Atom
+            │                   │     └── Material UI Typography (Article Title)
+            │                   ├── Molecule
+            │                   │     └── Material UI Grid (Article Metadata)
+            │                   │         ├── Atom
+            │                   │         │     └── Material UI Typography (Date)
+            │                   │         └── Atom
+            │                   │               └── Material UI Typography (Author)
+            │                   ├── Atom
+            │                   │     └── Material UI Typography (Article Body)
+            │                   │         ├── Atom
+            │                   │         │     └── Material UI Typography (Paragraph Text)
+            │                   │         ├── Atom
+            │                   │         │     └── Material UI CardMedia (Image)
+            │                   │         └── Molecule
+            │                   │               └── Material UI Card (Chart)
+            │                   │                   ├── Atom
+            │                   │                   │     └── Material UI Typography (Chart Title)
+            │                   │                   ├── Atom
+            │                   │                   │     └── Material UI Chart (Chart Data)
+            │                   │                   └── Atom
+            │                   │                         └── Material UI Typography (Chart Source)
+            │                   ├── Molecule
+            │                   │     └── Material UI Card (Subscribe Box)
+            │                   │         ├── Atom
+            │                   │         │     └── Material UI Typography (Subscribe Text)
+            │                   │         └── Atom
+            │                   │               └── Material UI Button (Subscribe Button)
+            │                   └── Molecule
+            │                         └── Material UI List (Related Articles)
+            │                             ├── Atom
+            │                             │     └── Material UI ListItem (Related Article)
+            │                             │         └── Atom
+            │                             │               └── Material UI ListItemText (Related Article Title)
+            ├── Organism
+            │     └── Sidebar
+            │         Props:
+            │           - sidebarBox: { title: string, buttonText: string }
+            │           - relatedLinks: Array<{ title: string, url: string }>
+            │         └── Molecule
+            │               └── Material UI Card (Sidebar Content)
+            │                   ├── Molecule
+            │                   │     └── Material UI CardContent (Sidebar Box)
+            │                   │         ├── Atom
+            │                   │         │     └── Material UI Typography (Box Title)
+            │                   │         └── Atom
+            │                   │               └── Material UI Button (Box Button)
+            │                   └── Molecule
+            │                         └── Material UI List (Related Links)
+            │                             ├── Atom
+            │                             │     └── Material UI ListItem (Related Link Item)
+            │                             │         └── Atom
+            │                             │              └── Material UI ListItemText (Related Link Text)
+            └── Organism
+                  └── Footer
+                      Props:
+                        - footerLinks: Array<{ title: string, url: string }>
+                        - socialMediaIcons: Array<{ name: string, url: string }>
+                        - disclaimer: string
+                        - copyright: string
+                      ├── Molecule
+                      │     └── Material UI Grid (Footer Content)
+                      │         ├── Molecule
+                      │         │     └── Material UI List (Footer Links)
+                      │         │         ├── Atom
+                      │         │         │     └── Material UI ListItem (Footer Link Item)
+                      │         │         │         └── Atom
+                      │         │         │               └── Material UI ListItemText (Footer Link Text)
+                      │         ├── Atom
+                      │         │     └── Material UI IconButton (Footer Social Media Icons)
+                      │         └── Atom
+                      │               └── Material UI Typography (Footer Disclaimer)
+                      └── Atom
+                            └── Material UI Typography (Footer Copyright)
